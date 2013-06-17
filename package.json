@@ -1,11 +1,12 @@
 {
   "name": "less",
-  "version": "1.4.0",
-  "description": "Leaner CSS",
+  "version": "1.4.0-fluidware",
+  "description": "Leaner CSS -fw",
   "homepage": "http://lesscss.org",
   "author": "Alexis Sellier <self@cloudhead.net>",
   "contributors": [
-    "The Core Less Team"
+    "The Core Less Team",
+    "Fluidware Inc"
   ],
   "bugs": {
     "url": "https://github.com/cloudhead/less.js/issues"
