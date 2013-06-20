@@ -1,5 +1,5 @@
 /*
- * LESS - Leaner CSS v1.4.0
+ * LESS - Leaner CSS v1.4.0.fw
  * http://lesscss.org
  *
  * Copyright (c) 2009-2013, Alexis Sellier
@@ -413,9 +413,6 @@ less.Parser = function Parser(env) {
                     //     ])
                     //   )
                     //
-
-                    console.log([typeof(variables) === 'object', !Array.isArray(variables)]);
-                    console.log(variables);
 
                     if (typeof(variables) === 'object' && !Array.isArray(variables)) {
                         variables = Object.keys(variables).map(function (k) {
@@ -1646,7 +1643,7 @@ if (less.mode === 'browser' || less.mode === 'rhino') {
         loadStyleSheet(sheetEnv,
             function (e, root, data, sheet, _, path) {
                 callback.call(null, e, root, path);
-            }, true);
+            }, true, sheetEnv.remaining, currentFileInfo.rootpath);
     };
 }
 
@@ -4561,12 +4558,7 @@ tree.Variable.prototype = {
         	}
         }
 
-        console.log(["frames/overrideframes: ", frames.length, overrideframes.length]);
-       	console.log(frames);
-
         frames = overrideframes.concat(frames);
-
-        debugger;
         
         variable = tree.find(frames, function (frame) {
             if (v = frame.variable(name)) {
@@ -5566,11 +5558,11 @@ function extractUrlParts(url, baseUrl) {
     return returner;
 }
 
-function loadStyleSheet(sheet, callback, reload, remaining) {
+function loadStyleSheet(sheet, callback, reload, remaining, originalRootPath) {
 
     // sheet may be set to the stylesheet for the initial load or a collection of properties including
     // some env variables for imports
-    var hrefParts = extractUrlParts(sheet.href, window.location.href);
+    var hrefParts = extractUrlParts(sheet.href, originalRootPath || window.location.href);
     var href      = hrefParts.url;
     var css       = cache && cache.getItem(href);
     var timestamp = cache && cache.getItem(href + ':timestamp');
