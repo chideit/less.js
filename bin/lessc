@@ -314,6 +314,6 @@ if (input != '-') {
 
     process.stdin.on('end', function() {
         parseLessFile(false, buffer);
-        process.exit(0);
+        //process.exit(0);
     });
 }
