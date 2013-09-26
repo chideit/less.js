@@ -1,9 +1,9 @@
 {
   "name": "less",
   "version": "1.4.0-fluidware",
-  "description": "Leaner CSS -fw",
+  "description": "Leaner CSS, extra Fluids",
   "homepage": "http://lesscss.org",
-  "author": "Alexis Sellier <self@cloudhead.net>",
+  "author": "Alexis Sellier <self@cloudhead.net>, Zhenya <zhenya@chide.it>",
   "contributors": [
     "The Core Less Team",
     "Fluidware Inc"
