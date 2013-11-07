@@ -87,6 +87,10 @@ if (!Array.prototype.map) {
     // 9. return A
     return A;
   };      
+}if(!Array.isArray) {
+  Array.isArray = function (vArg) {
+    return Object.prototype.toString.call(vArg) === "[object Array]";
+  };
 }var less, tree, charset;
 
 if (typeof environment === "object" && ({}).toString.call(environment) === "[object Environment]") {
@@ -108,6 +112,9 @@ if (typeof environment === "object" && ({}).toString.call(environment) === "[obj
     tree = window.less.tree = {};
     less.mode = 'browser';
 }
+
+
+
 //
 // less.js - parser
 //

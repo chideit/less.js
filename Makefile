@@ -36,6 +36,7 @@ less:
 	@@echo "(function (window, undefined) {" >> ${DIST}
 	@@cat build/require.js\
 		  ${SRC}/array.map.js\
+		  ${SRC}/array.isarray.js\
 	      ${SRC}/parser.js\
 	      ${SRC}/functions.js\
 	      ${SRC}/colors.js\
@@ -65,6 +66,7 @@ rhino:
 	@@touch ${RHINO}
 	@@cat build/require-rhino.js\
 		  ${SRC}/array.map.js\
+		  ${SRC}/array.isarray.js\
 	      ${SRC}/parser.js\
 	      ${SRC}/env.js\
 	      ${SRC}/visitor.js\
